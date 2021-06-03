@@ -1,0 +1,60 @@
+public class Main
+{
+    public static void main(String[] args)
+    {
+       doTestsPass();
+    }
+    public static  boolean isPoweOf10(int x)
+    {
+       int zero=0,i=0;
+       int one=0;
+       String s=Integer.toString(x);
+       if(s.charAt(0)=='1')
+       {
+           one++;
+       }
+       for(i=1;i<s.length();i++)
+       {
+           if(s.charAt(i)=='0')
+           {
+               zero++;
+           }
+       }
+       if(one==1 && zero==s.length()-1)
+       {
+           return(true);
+       }
+       else
+       {
+           return(false);
+       }
+       
+    }
+        public static void doTestsPass()
+        {
+            int c=0;
+             int[] isPowerList={1,10,100,10000};
+             int[] isNotPowerList={3,50,-1};
+               for(int i=0;i<isPowerList.length;i++)
+                  {
+                  if(!isPoweOf10(isPowerList[i]))
+                 {
+                 System.out.println("Test failed for "+i);
+                 c++;
+                 }
+                 }
+         for(int i=0;i<isNotPowerList.length;i++)
+             {
+               if(isPoweOf10(isNotPowerList[i]))
+                {
+                  System.out.println("Test failed for "+i);
+                  c++;
+                 }
+             }
+            if(c==0)
+            {
+                System.out.println("All test Passed");
+            }
+        }
+}
+        
