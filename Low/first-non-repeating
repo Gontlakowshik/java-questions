@@ -1,0 +1,54 @@
+ import java.util.*;
+ public class Main
+ {
+            public static void main(String[] args)
+             {
+               doTestsPass();
+             }
+               public static char findFirst(String input)
+               {
+                   int c=0,i=0;
+                   String p="";
+                   char k='0';
+                  int a[]=new int[26];
+                  for(i=0;i<input.length();i++)
+                  {
+                      a[input.charAt(i)-'a']++;
+                  }
+                  for(i=0;i<input.length();i++)
+                  {
+                    if(a[input.charAt(i)-'a']==1)
+                    {
+                        p=p+input.charAt(i);
+                        c++;
+                    }
+                  }
+                  if(c==0)
+                  {
+                      return(k);
+                  }
+                  else
+                  {
+                      return(p.charAt(0));
+                  }
+               }
+          
+             public static void   doTestsPass()
+             {
+                 String[] input={"apple","racecars","ababdc"};
+                 char[] output={'a','e','d'};
+                 boolean result=true;
+                 for(int i=0;i<input.length;i++)
+                 {
+                 result=result && findFirst(input[i])==output[i];
+                 if(!result)
+                   {
+                       System.out.println("Test failed for" + input[i]);
+                   }
+                 else
+                  {
+                   System.out.println("Test passed for"+input[i]);
+                  }
+                }
+             }
+ }             
