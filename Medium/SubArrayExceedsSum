@@ -1,0 +1,60 @@
+public class Solution
+{
+  public static int subArrayExceedsSum(int a[],int k)
+  {
+        int i=0,j=0;
+        int sum=0,min=0;
+        while(i<a.length)
+        {
+            sum=sum+a[i];
+            if(sum>=k)
+            {
+                min=i-j+1;
+                while(sum>=k)
+                {
+                    sum=sum-a[j];
+                    j++;
+                    if(sum>=k)
+                    {
+                        if(i-j+1<min)
+                        {
+                            min=i-j+1;
+                        }
+                    }
+                }
+            }
+            i++;
+        }
+        if(min==0)
+        {
+           return(-1);    
+        }
+        else
+        {
+            return(min);
+        }
+  }
+  
+  
+  public static void doTestsPass()
+  {
+    boolean result=true;
+    int[] arr={1,2,3,4};
+    result=result && subArrayExceedsSum(arr,6)==2;
+    result=result && subArrayExceedsSum(arr,12)==-1;
+   
+    if(result)
+    {
+      System.out.println("All tests pass");
+    }
+    else
+    {
+      System.out.println("There are test failures");
+    }
+  };
+  
+  public static void main(String args[])
+  {
+    doTestsPass();
+  }
+};
