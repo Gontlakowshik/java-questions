@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int i=0,j=0,c=0;
+        String s="";
+        String s1="";
+        Scanner sc=new Scanner(System.in);
+        s=sc.nextLine();
+        while(i<s.length())
+        {
+            if(s.charAt(i)!=s.charAt(j))
+            {
+                s1=s1+s.charAt(j)+c;
+                j=i;
+                c=0;
+            }
+            c++;
+            i++;
+        }
+        s1=s1+s.charAt(j)+c;
+        System.out.println(s1);
+    }
+}
