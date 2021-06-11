@@ -1,0 +1,15 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int i=0,j=0,sum=0,k=0;
+    int a[]={1,2,4,6,3,7,8};
+    sum=(a.length+1)*((a.length+2))/2;
+    for(i=0;i<a.length;i++)
+    {
+        k=k+a[i];
+    }
+    System.out.println(sum-k);
+    }
+}
