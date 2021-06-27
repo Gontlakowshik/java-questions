@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        HashMap<String,List<String>> m=new HashMap<String,List<String>>();
+        String a[]={"cat", "dog", "god"};
+        for(int i=0;i<a.length;i++)
+        {
+            
+            char s[]=a[i].toCharArray();
+            Arrays.sort(s);
+            String word=new String(s);
+            if(m.containsKey(word))
+            {
+                m.get(word).add(a[i]);
+            }
+            else
+            {
+                List<String> words=new ArrayList<String>();
+                words.add(a[i]);
+                m.put(word,words);
+            }
+        }
+        for (String s : m.keySet()) {
+            List<String> values = m.get(s);
+                System.out.print(values);
+        }
+    }
+}
