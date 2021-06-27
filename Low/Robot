@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int i=0,j=0;
+        Scanner sc=new Scanner(System.in);
+        String s="";
+        s=sc.nextLine();
+        for(int k=0;k<s.length();k++)
+        {
+            if(s.charAt(k)=='L')
+            {
+                i=i-1;
+            }
+            else if(s.charAt(k)=='R')
+            {
+                i=i+1;
+            }
+            else if(s.charAt(k)=='U')
+            {
+                j=j+1;
+            }
+            else if(s.charAt(k)=='D')
+            {
+                j=j-1;
+            }
+        }
+        System.out.println(i+" "+j);
+    }
+}
