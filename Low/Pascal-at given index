@@ -1,0 +1,22 @@
+import java.util.*;
+public class Solution
+    {
+     public static void main(String[] args) 
+     {
+         int r=4,c=2;
+          int sum1=1,sum2=1,sum3=1;
+          for(int i=1;i<=r;i++)
+          {
+              sum1=sum1*i;
+          }
+          for(int i=1;i<=r-c;i++)
+          {
+              sum2=sum2*i;
+          }
+          for(int i=1;i<=c;i++)
+          {
+              sum3=sum3*i;
+          }
+          System.out.println((sum1)/((sum2)*(sum3)));
+     }
+    }
